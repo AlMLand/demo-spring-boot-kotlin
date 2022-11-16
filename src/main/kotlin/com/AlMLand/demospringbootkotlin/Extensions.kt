@@ -18,12 +18,12 @@ private fun getOrdinal(day: Int) = when {
 }
 
 private val englishDateFormatter = DateTimeFormatterBuilder()
-    .appendPattern("yyyy-MM-dd")
+    .appendPattern("dd-MM-yyyy")
     .appendLiteral(" ")
     .appendText(ChronoField.DAY_OF_MONTH, daysLookup)
     .appendLiteral(" ")
     .appendPattern("yyyy")
-    .toFormatter(Locale.ENGLISH)
+    .toFormatter(Locale.GERMANY)
 
 fun String.toSlug() = lowercase(Locale.getDefault())
     .replace("\n", " ")

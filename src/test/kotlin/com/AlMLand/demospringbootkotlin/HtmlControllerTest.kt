@@ -11,7 +11,7 @@ import org.springframework.boot.test.web.client.getForEntity
 import org.springframework.http.HttpStatus
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class IntegrationTest(@Autowired val testRestTemplate: TestRestTemplate) {
+class HtmlControllerTest(@Autowired val testRestTemplate: TestRestTemplate) {
 
     @BeforeAll
     fun setUp() {
