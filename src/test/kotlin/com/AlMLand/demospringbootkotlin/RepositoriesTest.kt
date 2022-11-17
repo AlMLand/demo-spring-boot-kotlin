@@ -1,10 +1,10 @@
 package com.AlMLand.demospringbootkotlin
 
-import org.assertj.core.api.Assertions.*;
 import com.AlMLand.demospringbootkotlin.domain.Article
 import com.AlMLand.demospringbootkotlin.domain.User
 import com.AlMLand.demospringbootkotlin.repository.ArticleRepository
 import com.AlMLand.demospringbootkotlin.repository.UserRepository
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
@@ -22,8 +22,10 @@ class RepositoriesTest @Autowired constructor(
     fun `When findByIdOrNull then return Article`() {
         val juergen = User("springjuergen", "Juergen", "Hoeller")
         testEntityManager.persist(juergen)
-        val article = Article("Spring Framework 5.0 goes GA", "Dear Spring community ...",
-            "Lorem ipsum", juergen)
+        val article = Article(
+            "Spring Framework 5.0 goes GA", "Dear Spring community ...",
+            "Lorem ipsum", juergen
+        )
         testEntityManager.persist(article)
         testEntityManager.flush()
 

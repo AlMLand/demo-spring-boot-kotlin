@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class DemoSpringBootKotlinApplication
 
 fun main(args: Array<String>) {
-	runApplication<DemoSpringBootKotlinApplication>(*args)	// weiter by: Exposing HTTP API
+	runApplication<DemoSpringBootKotlinApplication>(*args)
 }
