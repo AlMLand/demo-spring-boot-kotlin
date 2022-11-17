@@ -17,7 +17,7 @@ class UserController(private val userRepository: UserRepository) {
 
     @GetMapping("{login}")
     fun getUserBySlug(@PathVariable login: String): ResponseEntity<User> {
-        val user = userRepository.findByLogin(login) ?: return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null)
+        val user = userRepository.findByLogin(login) ?: return ResponseEntity.notFound().build()
         return ResponseEntity.ok(user)
     }
 
